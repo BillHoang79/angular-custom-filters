@@ -22,7 +22,7 @@ app.controller('myCtrl', function($scope,$filter) {
 			age:32
 		}
 	]}
-})
+})    
 
 // Filter name
 app.filter('charlimit', function() {
