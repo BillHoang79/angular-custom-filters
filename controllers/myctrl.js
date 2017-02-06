@@ -22,6 +22,26 @@ app.controller('myCtrl', function($scope,$filter) {
 			age:32
 		}
 	]}
-	// Filters in controllers
-	console.log($filter('uppercase')('make this string uppercase!'))
+})
+
+// Filter name
+app.filter('charlimit', function() {
+	return function(input,length) {
+		// Limit to 10 chars
+		if (!length) {
+			length = 10
+		}
+		// Calls string
+		if(!input) {
+			return ''
+		}
+		// Returns it
+		if(input.length <= length) {
+			return input
+		}
+		else {
+			// String
+			return input.substring(0, length) + 'max charlimit'
+		}
+	}	
 })
